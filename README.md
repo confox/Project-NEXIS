@@ -30,4 +30,3 @@ We welcome contributions to enhance the capabilities and features of NEXIS. If y
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
