@@ -1,31 +1,41 @@
-// Import required modules
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// Create an instance of Express
 const app = express();
-const port = process.env.PORT || 3000; // Set port number
+const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(bodyParser.json()); // Parse JSON bodies
+app.use(bodyParser.json());
 
-// Define routes
-app.get('/', (req, res) => {
-  res.send('Welcome to NEXIS API!');
-});
+// Sample data for user preferences (replace with your own logic)
+let userPreferences = {
+  theme: 'light',
+  language: 'en',
+};
 
-// Sample POST route for processing user queries
+// Route handler for processing user queries
 app.post('/query', (req, res) => {
-  const { query } = req.body; // Assuming the user query is sent in the request body
-  
-  // Process the user query (you can implement NLP functionality here)
+  const { query } = req.body;
+
+  // Process the user query (replace with your own logic)
   const response = `Processing user query: ${query}`;
 
-  // Send back a response
   res.json({ response });
 });
 
-// Start the server
+// Route handler for managing user preferences
+app.get('/settings', (req, res) => {
+  res.json(userPreferences);
+});
+
+app.post('/settings', (req, res) => {
+  const { theme, language } = req.body;
+
+  // Update user preferences (replace with your own logic)
+  userPreferences = { theme, language };
+
+  res.json({ message: 'User preferences updated successfully' });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
