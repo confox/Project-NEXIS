@@ -41,4 +41,3 @@ We expect all contributors to adhere to the project's [Code of Conduct](CODE_OF_
 If you need assistance with anything related to contributing to NEXIS or have any questions, don't hesitate to reach out to our team or the project maintainers. You can also refer to the [README.md](README.md) for more information about the project.
 
 We appreciate your contributions and look forward to collaborating with you to make NEXIS even better!
-
