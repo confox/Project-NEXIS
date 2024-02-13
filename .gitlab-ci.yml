@@ -1,0 +1,33 @@
+# Define the stages of your CI/CD pipeline
+stages:
+  - test
+  - build
+  - deploy
+
+# Define job definitions for each stage
+# Test stage job
+test:
+  stage: test
+  script:
+    - npm install          # Install project dependencies
+    - npm test             # Run tests
+  artifacts:
+    paths:
+      - coverage/          # Save coverage reports or any other artifacts
+
+# Build stage job
+build:
+  stage: build
+  script:
+    - npm install          # Install project dependencies
+    - npm run build        # Build the project
+
+# Deploy stage job
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to production"   # Replace with actual deployment commands
+    # Example deployment command:
+    # - scp -r build/ user@your-server:/path/to/destination
+  only:
+    - master  # Deploy only when changes are pushed to the master branch
